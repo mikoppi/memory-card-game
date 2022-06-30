@@ -4,7 +4,7 @@ const Card = ({ name, url }) => {
   return (
     <div>
         <h3>{name}</h3>
-        <img src={url} alt='meme' width="200" height="200"></img>
+        <img src={url} alt='meme' width="150" height="150"></img>
     </div>
   )
 }

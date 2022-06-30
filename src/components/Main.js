@@ -3,28 +3,28 @@ import Cards from './Cards'
 
 
 const Main = () => {
-    const [memes, setMemes] = useState([])
+    const [pokemons, setPokemon] = useState([])
 
     useEffect(() => {
         const loadCards = async () => {
-            setMemes(await getMemes(10))
+            setPokemon(await getPokemon(10))
         }
         loadCards()
     },[])
 
-    const getMemes = async (amount) => {
-        const memes = [];
+    const getPokemon = async (amount) => {
+        const pokemons = [];
         for (let i = 1; i <= amount; i++) {
-            const url = 'https://api.imgflip.com/get_memes';
+            const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
             const response = await fetch(url);
-            const meme = await response.json();
-            console.log(meme)
-            const id = meme.data.memes[i].id;
-            const name = meme.data.memes[i].name
-            const picture = meme.data.memes[i].url
-            memes.push({id, name, picture})
+            const pokemon = await response.json();
+            console.log(pokemon)
+            const id = pokemon.id;
+            const name = pokemon.name
+            const picture = pokemon.sprites.front_default
+            pokemons.push({id, name, picture})
         }
-        return memes 
+        return pokemons 
     }
     
   
@@ -34,7 +34,7 @@ const Main = () => {
 
   return (
     <div>
-        <Cards memes={memes}/>
+        <Cards pokemons={pokemons}/>
     </div>
   )
 }
