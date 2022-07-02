@@ -3,11 +3,11 @@ import Card from './Card'
 
 //const cards = [{name:'card1'}, {name:'card2'}, {name:'card3'}]
 
-const Cards = ({ pokemons }) => {
+const Cards = ({ pokemons, handleClick }) => {
   return (
-    <div>
+    <div className='cards'>
         {pokemons.map(pokemon => 
-        <Card key = {pokemon.id} name={pokemon.name} url={pokemon.picture}/>
+        <Card key = {pokemon.id} name={pokemon.name} url={pokemon.picture} handleClick={handleClick}/>
         )}
     </div>
   )

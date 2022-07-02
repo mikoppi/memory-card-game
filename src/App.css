@@ -1,0 +1,48 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh
+}
+
+.header {
+    font-size: 1.5em;
+}
+
+.cards {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns:repeat(5,1fr);
+    min-width: 50vw;
+    max-width: 70vw;
+    gap:20px
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;   
+}
+
+.result {
+    font-size: 2em;
+}
