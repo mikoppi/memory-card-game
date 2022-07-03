@@ -6,7 +6,8 @@
 body {
     padding: 0;
     margin:0;
-    background: url('./downloads/417446.jpg');
+    background-color: ;
+    background: url('./downloads/grass.jpg');
     background-size: cover;
 }
 .main {
@@ -20,6 +21,7 @@ body {
 }
 
 .header {
+    margin-top: 25px;
     font-size:2em;
     font-family: 'Pokemon';
 }
@@ -27,10 +29,10 @@ body {
 .cards {
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns:repeat(5,1fr);
+    grid-template-columns:repeat(6,1fr);
     min-width: 50vw;
     max-width: 70vw;
-    gap:30px
+    gap:5px
 }
 
 .header {
@@ -48,8 +50,28 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.3em;
+    font-size: 1.2em;
     color: rgb(0, 0, 0);
+    margin-bottom: 0;
+    background-color: rgba(250, 248, 248, 0);
+    border-radius: 150px;
+    padding: 20px
+}
+
+.card > h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.card > img:hover {
+    transform: scaleX(-1);
+    filter: drop-shadow(0 0 30px rgb(0, 0, 0));
+
+}
+
+
+.card > img {
+
 }
 
 .footer {
@@ -67,9 +89,13 @@ body {
     padding:0;
     font-size: 1.3em;
     color:rgb(78, 101, 233);
-    background-color: rgba(235, 232, 21, 0.76);
+    background-color: rgba(235, 232, 21, 0.849);
     border-radius: 70px;
-    padding: 10px
+    padding: 10px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.356);
+    margin-bottom: 80px;
+    margin-top: 50px;
+    
 }
 
 .score > * {
@@ -78,18 +104,49 @@ body {
 }
 
 .score > h3 {
-    background-color: rgb(218, 214, 37);
+    background-color: rgb(15, 97, 190);
     border-radius: 40px;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 20px;
+    color: yellow;
 }
 
 .score > h2 {
     margin-bottom: 10px;
+
 
 }
 
 .result {
     font-size: 2em;
     color: rgb(0, 0, 0);
+}
+
+.result > .win {
+    padding: 150px 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    border-radius: 5px;
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.226);
+    color:white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.footer > p {
+    margin: 5px;
+    font-size: 0.8em;
+    font-family: 'pokemon';
+
+}
+
+.footer > p > a {
+    color: yellow;
+    
 }

@@ -10,7 +10,7 @@ const Main = () => {
     const [score, setScore] = useState(0)
     const [scoreHistory, setScoreHistory] = useState([0])
     const [level, setLevel] = useState(1)
-    const [pokemonAmount, setPokemonAmount] = useState(5)
+    const [pokemonAmount, setPokemonAmount] = useState(6)
     const [startIndex, setStartIndex] = useState(1)
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const Main = () => {
 
     const getPokemon = async (amount, index) => {
         const pokemons = [];
-        for (let i = 1; i <= level*5; i++) {
+        for (let i = 1; i <= level*6; i++) {
             const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
             const response = await fetch(url);
             const pokemon = await response.json();
@@ -50,7 +50,7 @@ const Main = () => {
         setScoreHistory((prevState) => [...prevState, score])
         setClickedPokemons([])
         setScore(0)
-        setPokemonAmount(5)
+        setPokemonAmount(6)
         setLevel(1)
     }
      
@@ -61,21 +61,22 @@ const Main = () => {
     const randomizePokemon = (array) => array.sort(() => Math.random() - 0.5);
 
     const changeLevel = () => {
-        if (clickedPokemons.length===pokemonAmount) {
-            setPokemonAmount((prevState) => prevState+5)
+        if (clickedPokemons.length===pokemonAmount && clickedPokemons.length!==24) {
+            setPokemonAmount((prevState) => prevState+6)
             setLevel((prevState) => prevState+1)
             setStartIndex((prevState) => prevState+4)
-        }
+        } 
     }
 
 
   return (
     <div className='main'>
         <ScoreBoard currentScore={score} bestScore={getBestScore()}/>
-        <Result currentScore={score} pokemonAmount={pokemonAmount} level={level}/>
+        <Result reset={resetGame} currentScore={score} pokemonAmount={pokemonAmount} level={level}/>
         <Cards 
         pokemons={pokemons}
-        handleClick={handleClick}/>
+        handleClick={handleClick}
+        currentScore={score}/>
     </div>
   )
 }
