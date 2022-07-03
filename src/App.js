@@ -7,7 +7,7 @@ import './App.css'
 const App = () => {
   return (
     <div>
-      <Header title='Memory card game'/>
+      <Header title='Pokémon memory game'/>
       <Main/>
       <Footer/>  
     </div>

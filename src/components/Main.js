@@ -72,10 +72,10 @@ const Main = () => {
   return (
     <div className='main'>
         <ScoreBoard currentScore={score} bestScore={getBestScore()}/>
+        <Result currentScore={score} pokemonAmount={pokemonAmount} level={level}/>
         <Cards 
         pokemons={pokemons}
         handleClick={handleClick}/>
-        <Result currentScore={score} pokemonAmount={pokemonAmount} level={level}/>
     </div>
   )
 }
