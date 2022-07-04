@@ -6,7 +6,7 @@ const Result = ( {currentScore, pokemonAmount, level, reset} ) => {
   return (
     <div className='result'>
         
-        {currentScore===1 ? 
+        {currentScore===24 ? 
         <h2 className='win'>
             <h1>You won!</h1>
             <button onClick={reset}>Play again</button>
