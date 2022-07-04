@@ -29,7 +29,7 @@ body {
 .cards {
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns:repeat(6,1fr);
+    grid-template-columns:repeat(8,1fr);
     min-width: 50vw;
     max-width: 70vw;
     gap:5px
@@ -93,7 +93,7 @@ body {
     border-radius: 70px;
     padding: 10px;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.356);
-    margin-bottom: 80px;
+    margin-bottom: 30px;
     margin-top: 50px;
     
 }
@@ -130,6 +130,20 @@ body {
     justify-content: center;
     gap: 100px;
     border-radius: 5px;
+}
+
+.result > .win > button {
+    font-family: 'pokemon';
+    font-size: 1.3em;
+    border-radius: 20px;
+    background-color: rgba(43, 67, 206, 0.795);
+    color:rgb(243, 210, 65);
+    border-style: none;
+    padding: 10px;
+    font-weight: bold;
+    position: relative;
+    top:-100px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.356);
 }
 
 .footer {
