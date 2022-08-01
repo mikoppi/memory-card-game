@@ -18,7 +18,9 @@ body {
     height: 100vh;
     font-family: 'Pokemon';
     color:grey;
-    overflow: scroll;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
 }
 
 .main::-webkit-scrollbar { /* WebKit */
@@ -27,7 +29,7 @@ body {
 }
 
 .header {
-    margin-top: 5px;
+    margin-top: 15px;
     font-size:2rem;
     font-family: 'Pokemon';
 }
@@ -55,7 +57,7 @@ body {
     .image {transform: scale(0.5);}
     }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .cards { grid-template-columns: repeat(2, 1fr); }
     .image {transform: scale(0.3);}
     .score {transform: scale(0.8)}
@@ -85,7 +87,7 @@ body {
     background-color: rgba(250, 248, 248, 0);
     border-radius: 150px;
     padding: 20px;
-    animation: append-animate .7s linear;
+    animation: append-animate-no-scale .5s linear;
     
 }
 
@@ -184,6 +186,17 @@ body {
 	}
 	to {
 		transform: scale(1);
+		opacity: 1;	
+	}
+}
+
+@keyframes append-animate-no-scale {
+	from {
+		
+		opacity: 0;
+	}
+	to {
+		
 		opacity: 1;	
 	}
 }
