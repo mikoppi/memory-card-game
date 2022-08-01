@@ -14,26 +14,55 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     height: 100vh;
     font-family: 'Pokemon';
-    color:grey
-    
+    color:grey;
+    overflow: scroll;
+}
+
+.main::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
 }
 
 .header {
-    margin-top: 25px;
-    font-size:2em;
+    margin-top: 5px;
+    font-size:2rem;
     font-family: 'Pokemon';
 }
 
+
+
 .cards {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto;
     grid-template-columns:repeat(8,1fr);
-    min-width: 50vw;
-    max-width: 70vw;
-    gap:5px
+    
+    max-width: 30%;
+   
+    position: relative;
+    justify-content: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    
+     
 }
+
+@media (max-width: 900px) {
+    .cards { grid-template-columns: repeat(4, 1fr); }
+    .score {transform: scale(0.8)}
+    .image {transform: scale(0.5);}
+    }
+
+@media (max-width: 500px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    .image {transform: scale(0.3);}
+    .score {transform: scale(0.8)}
+    .result {margin-left: 100px;}
+}
+      
+  
 
 .header {
     display: flex;
@@ -55,7 +84,9 @@ body {
     margin-bottom: 0;
     background-color: rgba(250, 248, 248, 0);
     border-radius: 150px;
-    padding: 20px
+    padding: 20px;
+    animation: append-animate .7s linear;
+    
 }
 
 .card > h3 {
@@ -63,8 +94,13 @@ body {
     margin-bottom: 0;
 }
 
+.card > img {
+    transition: transform 1s ease-in-out;
+}
+
 .card > img:hover {
-    transform: scaleX(-1);
+    transform: scale(2);
+    
     filter: drop-shadow(0 0 30px rgb(0, 0, 0));
 
 }
@@ -85,14 +121,16 @@ body {
     align-items: center;
     margin:0;
     padding:0;
-    font-size: 1.3em;
+    font-size: 1.1em;
     color:rgb(78, 101, 233);
     background-color: rgba(235, 232, 21, 0.849);
     border-radius: 70px;
-    padding: 10px;
+    padding: 30px;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.356);
     margin-bottom: 55px;
-    margin-top: 50px;
+    margin-top: 0px;
+    max-width: 800px;
+   
     
 }
 
@@ -116,8 +154,12 @@ body {
 }
 
 .result {
-    font-size: 2em;
+    font-size: 1.8em;
     color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    
+    
 }
 
 .result > .win {
@@ -128,7 +170,25 @@ body {
     justify-content: center;
     gap: 100px;
     border-radius: 5px;
+    
 }
+
+.result > .win > h1 {
+    animation: append-animate .3s linear;
+}
+
+@keyframes append-animate {
+	from {
+		transform: scale(0);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;	
+	}
+}
+
+
 
 .result > .win > button {
     font-family: 'pokemon';
@@ -142,6 +202,11 @@ body {
     position: relative;
     top:-100px;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.356);
+    transition: transform 1s;
+}
+
+.result > .win > button:hover {
+    transform: scale(1.2);
 }
 
 .footer {
@@ -151,6 +216,7 @@ body {
     align-items: center;
     flex-direction: column;
 }
+    
 .footer > p {
     margin: 5px;
     font-size: 0.8em;
