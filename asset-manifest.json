@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/memory-card-game/static/css/main.c3c453b8.css",
-    "main.js": "/memory-card-game/static/js/main.0df08fcd.js",
+    "main.css": "/memory-card-game/static/css/main.7862c51f.css",
+    "main.js": "/memory-card-game/static/js/main.023af586.js",
     "static/media/grass.jpg": "/memory-card-game/static/media/grass.264a75c2e1921dc61f21.jpg",
     "static/media/pokemon.png": "/memory-card-game/static/media/pokemon.96a6c923a4ca87167e06.png",
     "static/media/Pokemon Hollow.ttf": "/memory-card-game/static/media/Pokemon Hollow.47f77ce9939c5330492b.ttf",
     "index.html": "/memory-card-game/index.html",
-    "main.c3c453b8.css.map": "/memory-card-game/static/css/main.c3c453b8.css.map",
-    "main.0df08fcd.js.map": "/memory-card-game/static/js/main.0df08fcd.js.map"
+    "main.7862c51f.css.map": "/memory-card-game/static/css/main.7862c51f.css.map",
+    "main.023af586.js.map": "/memory-card-game/static/js/main.023af586.js.map"
   },
   "entrypoints": [
-    "static/css/main.c3c453b8.css",
-    "static/js/main.0df08fcd.js"
+    "static/css/main.7862c51f.css",
+    "static/js/main.023af586.js"
   ]
 }
